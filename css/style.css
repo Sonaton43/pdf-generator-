@@ -151,14 +151,14 @@
 .dropdown-menu-are-one{
     opacity: 0;
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     top: 82px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #ffffff;
     border: .1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 1000px;
+    min-width: 850px;
     padding: 10px;
     border-radius: 10px;
     border-radius: 10px;
@@ -174,10 +174,34 @@
     transform: translateX(-50%);
     transition: 0.5s;
 }
+.dropdown-menu-top-one {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.dropdown-menu-top-one .top-p {
+    font-size: 30px;
+    color: #ffffff;
+    transform: rotate(-90deg);
+}
 .dropdown-hidden-are{
     position: absolute;
     opacity: 0;
     top: -20px;
+    left: 50%;
+    background-color: #e60000;
+    transform: translateX(-50%);
+    transition: 0.5s;
+    width: 100px;
+}
+.dropdown-hidden-are-one{
+    position: absolute;
+    opacity: 0;
+    top: 74px;
     left: 50%;
     background-color: #e60000;
     transform: translateX(-50%);
@@ -212,7 +236,7 @@
 .drop-items a{
     padding-left: 10px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
 }
 .drop-items:hover{
@@ -220,7 +244,8 @@
 }
 .dropdown-are:hover .dropdown-menu-are, 
 .dropdown-are:hover .dropdown-menu-are-one, 
-.dropdown-are:hover .dropdown-menu-top{
+.dropdown-are:hover .dropdown-menu-top,
+.dropdown-are:hover .dropdown-menu-top-one{
     cursor: pointer;
     visibility: visible;
     opacity: 1;
