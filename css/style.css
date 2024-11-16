@@ -228,6 +228,11 @@
 .drop-items{
     padding: 0 20px;
 }
+.drop-items img{
+    width: 20px;
+    padding: 0;
+    margin: 10px 0;
+}
 .drop-items svg{
     width: 20px;
     padding: 0;
