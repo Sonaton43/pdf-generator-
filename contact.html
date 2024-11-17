@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/all.min.css">
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/about.css"> 
 </head>
-<body>   
+<body style="background-color: #ececec;">   
 	<!--Navigation-Bar Start-->
     <header>
         <div class="custom-nav d-flex justify-content-between align-items-center">
@@ -174,6 +175,52 @@
         </div>
     </header>
     <!--Navigation-Bar End-->
+
+    <!--Contact Start-->
+    <div class="contact-us">
+        <div class="contact-area">
+            <h2 class="contact-title">Contact Us</h2>
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">@ Email</label>
+                  <input type="email" class="form-control" id="email" name="name"  required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="text" class="form-control" id="phone" name="phone"  required>
+                </div>
+                <div class="col-md-6">
+                  <label for="subject" class="form-label">Subject</label>
+                  <select class="form-select" id="subject" name="subject" required>
+                    <option selected disabled >Choose...</option>
+                    <option   value="query">Query</option>
+                    <option   value="etc..">etc..</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" id="description" class="form-control" rows="5"></textarea>
+                  </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck2">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+              </form>
+        </div>
+    </div>
+    <!--Contact End-->
 
     <!--Footer-->
     <footer class="footer">

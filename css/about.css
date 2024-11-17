@@ -1,0 +1,76 @@
+.about-us{
+    width: 80%;
+    background-color: #ffffff;
+    margin: 20px auto;
+}
+.about-content{
+    width: 100%;
+}
+.about-content .about-title{
+    font-size: 20pt;
+    text-align: center;
+    margin: O;
+    padding: 20px 0 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+.about-text-area{
+    text-align: center;
+    padding: 10px 60px 15px;
+}
+.about-text-area p{
+    font-size: 12pt;
+}
+.about-text-area h3{
+    font-size: 16pt;
+}
+.founding .col-lg-5, .founding .col-lg-7{
+    padding: 15px 10px;
+}
+.founding .col-lg-5 img{
+    width: 100%;
+}
+.founding .col-lg-7 h3{
+    font-size: 16pt;
+    margin: 0;
+}
+.founding .col-lg-7 p{
+    padding-top: 10px;
+    font-size: 12pt;
+    line-height: 20pt;
+    text-align: left;
+}
+
+.contact-us{
+    width: 80%;
+    background-color: #ffffff;
+    margin: 20px auto;
+}
+.contact-area{
+    width: 100%;
+}
+.contact-area form{
+    padding:  20px 60px 30px;
+}
+.contact-title{
+    font-size: 20pt;
+    text-align: center;
+    margin: O;
+    padding: 20px 0 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+@media(max-width: 992px) {
+    .about-us{
+        width: 90%;
+    }
+    .about-text-area{
+        padding: 10px 40px 15px;
+    }
+}
+@media(max-width: 480px) {
+    .about-us{
+        width: 95%;
+    }
+    .about-text-area{
+        padding: 10px 20px 15px;
+    }
+}
