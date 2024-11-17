@@ -472,4 +472,12 @@
     .certificate-row{
         width: 90%;
     }
+    .footer-bottom{
+        flex-direction: column;
+    }
+    .social-icons{
+        display: flex;
+        padding-top: 10px;
+        justify-content: space-evenly;
+    }
 }
