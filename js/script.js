@@ -1,3 +1,13 @@
+document.querySelectorAll('.dropdown-are').forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => {
+        dropdown.querySelector('.dropdown-menu-are').style.visibility = 'visible';
+        dropdown.querySelector('.dropdown-menu-are').style.opacity = '1';
+    });
+    dropdown.addEventListener('mouseleave', () => {
+        dropdown.querySelector('.dropdown-menu-are').style.visibility = 'hidden';
+        dropdown.querySelector('.dropdown-menu-are').style.opacity = '0';
+    });
+});
 document.addEventListener("DOMContentLoaded", function () {
     const barIcon = document.querySelector(".bar-icon");
     const xIcon = document.querySelector(".x-icon");

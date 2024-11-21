@@ -147,6 +147,7 @@
     border-radius: 10px;
     border-radius: 10px;
     transition: 0.5s;
+    z-index: 111111;
 }
 .dropdown-menu-are-one{
     opacity: 0;
@@ -162,7 +163,7 @@
     padding: 10px;
     border-radius: 10px;
     border-radius: 10px;
-    transition: 0.5s;
+    z-index: 111111;
 }
 .dropdown-menu-top {
     position: absolute;
@@ -253,7 +254,7 @@
 .dropdown-are:hover .dropdown-menu-top-one{
     cursor: pointer;
     visibility: visible;
-    opacity: 1;
+    opacity: 100%;
 }
 .text-containt{
     padding: 25px 0px 30px 0px;
@@ -399,6 +400,69 @@
         margin: 0px 10px;
     }
 }
+.signin-row{
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+} 
+.signin-row h1 {
+    font-weight: 600;
+    font-size: 24px;
+}
+.signin-row input[type="text"],
+.signin-row input[type="email"],
+.signin-row input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s;
+}
+.signin-row input:focus {
+    border-bottom: 2px solid #16a085;
+    outline: none;
+}
+.signin-row button {
+    transition: all 0.2s ease-in-out;
+}
+.signin-row button:hover {
+    opacity: 0.9;
+}
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h1 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  
+  .card input[type="text"],
+  .card input[type="email"],
+  .card input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s;
+  }
+  
+  .card input:focus {
+    border-bottom: 2px solid #16a085;
+    outline: none;
+  }
+  
+  .card button {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card button:hover {
+    opacity: 0.9;
+  }
+  
+  .bg-primary {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
 
 .footer {
     background-color: #000000;
@@ -481,3 +545,5 @@
         justify-content: space-evenly;
     }
 }
+
+
