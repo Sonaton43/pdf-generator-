@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Page</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Font-Awsome css-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <style>
+        .convert-page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .convert-section {
+            background-color: #c00013;
+            min-height: 100px;
+            text-align: center;
+            color: white;
+        }
+        .convert-section img {
+            width: 80px;
+        }
+        .upload-container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+        .file-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .file-item {
+            position: relative;
+            width: 180px;
+            height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .file-item img,
+        .file-item canvas {
+            max-width: 100%;
+            max-height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .file-item .rotate-btn,
+        .file-item .remove-btn {
+            position: absolute;
+            top: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .file-item .remove-btn {
+            right: 5px;
+            color: #dc3545;
+        }
+        .file-item .rotate-btn {
+            left: 5px;
+            color: #0d6efd;
+        }
+        .upload-btn {
+            background-color: #c00013;
+            border-radius: 15px;
+            min-width: 250px;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .add-more-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #c00013;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            display: none;
+        }
+        .add-more-btn i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>   
+    <div class="convert-page">
+        <div class="convert-section">
+            <img src="images/pdf-svgrepo-com.svg" alt="">
+            <h2>Upload and Manage Files</h2>
+            <p>Select files to view and edit.</p>
+        </div>
+        <!-- <div class="upload-container">
+            <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
+            <div class="file-list" id="file-list"></div>
+        </div>
+        <button class="add-more-btn" id="add-more-btn" onclick="triggerAddMoreInput()">
+            <i class="fas fa-plus"></i>
+        </button>
+        <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+        <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;"> -->
+        <div class="upload-container">
+            <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
+            <div class="file-list" id="file-list"></div>
+        </div>
+        <button class="add-more-btn" id="add-more-btn" onclick="triggerAddMoreInput()">
+            <i class="fas fa-plus"></i>
+        </button>
+        <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+        <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+    </div>
+
+    <!--Font-Awsome js-->
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            const fileList = $("#file-list");
+            const addMoreBtn = $("#add-more-btn");
+
+            function handleFiles(files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const fileItem = $("<div>").addClass("file-item");
+                    const removeBtn = $("<div>")
+                        .addClass("remove-btn")
+                        .html('<i class="fas fa-times"></i>')
+                        .on("click", function () {
+                            fileItem.remove();
+                            if (!fileList.children().length) {
+                                addMoreBtn.hide();
+                            }
+                        });
+                    const rotateBtn = $("<div>")
+                        .addClass("rotate-btn")
+                        .html('<i class="fas fa-sync-alt"></i>');
+                    let rotation = 0;
+                    rotateBtn.on("click", function () {
+                        rotation = (rotation + 90) % 360;
+                        if (file.type.startsWith("image")) {
+                            img.css("transform", `rotate(${rotation}deg)`);
+                        } else if (file.type === "application/pdf") {
+                            canvas.css("transform", `rotate(${rotation}deg)`);
+                        }
+                    });
+                    if (file.type.startsWith("image")) {
+                        const img = $("<img>");
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            img.attr("src", e.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                        fileItem.append(img);
+                    } else if (file.type === "application/pdf") {
+                        const canvas = $("<canvas>");
+                        const context = canvas[0].getContext("2d");
+                        const pdfjsLib = window["pdfjs-dist/build/pdf"];
+                        const loadingTask = pdfjsLib.getDocument(URL.createObjectURL(file));
+                        loadingTask.promise.then(function (pdf) {
+                            pdf.getPage(1).then(function (page) {
+                                const viewport = page.getViewport({ scale: 0.5 });
+                                canvas.attr("width", viewport.width);
+                                canvas.attr("height", viewport.height);
+                                const renderContext = {
+                                    canvasContext: context,
+                                    viewport: viewport,
+                                };
+                                page.render(renderContext).promise.then(function () {
+                                    fileItem.append(canvas);
+                                });
+                            });
+                        });
+                    } else {
+                        alert("Unsupported file type: " + file.type);
+                        continue;
+                    }
+                    fileItem.append(removeBtn).append(rotateBtn);
+                    fileList.append(fileItem);
+                }
+                if (fileList.children().length) {
+                    addMoreBtn.show();
+                }
+            }
+
+            window.triggerUploadInput = function () {
+                $("#upload-input").click();
+            };
+
+            window.triggerAddMoreInput = function () {
+                $("#add-more-input").click();
+            };
+
+            $("#upload-input").on("change", function (e) {
+                handleFiles(e.target.files);
+            });
+
+            $("#add-more-input").on("change", function (e) {
+                handleFiles(e.target.files);
+            });
+        });
+    </script>
+</body>
+</html>

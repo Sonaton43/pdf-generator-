@@ -154,20 +154,6 @@
 .convert-section p{
     font-size: 1rem;
 }
-/* .convert-btn input{
-    display: none;
-} */
-/* .convert-btn label{
-    background-color: #c00013;
-    border-radius: 15px;
-    min-width: 250px;
-    padding: 25px 40px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    text-align: center;
-    border: none;
-} */
 .convert-btn .upload-btn{
     background-color: #c00013;
     border-radius: 15px;
