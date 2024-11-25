@@ -192,7 +192,7 @@
                 <!-- <span class="discount-badge">-42%</span> -->
             </div>
             <div class="value-display">
-                <p id="display-value">1234</p>
+                <!-- <p id="display-value">1234</p> -->
             </div>
             <div class="pricing">
                 <div class="pricing-grid">
@@ -200,9 +200,30 @@
                     <p class="dollar"><i class="fa-solid fa-dollar-sign"></i>0</p>
                     <a href="#" class="btn btn-danger">Get Started</a>
                     <h5>Free features include:</h5>
-                    <p><i class="fa-solid fa-check"></i>Access to iLovePDF tools</p>
-                    <p><i class="fa-solid fa-check"></i>Limited document processing</p>
-                    <p><i class="fa-solid fa-check"></i>Work on Web</p>
+                    <p class="pt-3"><i class="fa-solid fa-check i"></i>Access to iLovePDF tools</p>
+                    <p><i class="fa-solid fa-check i"></i>Limited document processing</p>
+                    <p><i class="fa-solid fa-check i"></i>Work on Web</p>
+                </div>
+                <div class="pricing-grid">
+                    <h3>Premium</h3>
+                    <p class="dollar"><i class="fa-solid fa-dollar-sign"></i><span id="display-value">4</span></p>
+                    <a href="#" class="btn btn-warning">Get Started</a>
+                    <h5>Premium features include:</h5>
+                    <p class="pt-3"><i class="fa-solid fa-check i"></i>Full access to iLovePDF tools</p>
+                    <p><i class="fa-solid fa-check i"></i>Unlimited document processing</p>
+                    <p><i class="fa-solid fa-check i"></i>Work on Web, Mobile and Desktop</p>
+                    <p><i class="fa-solid fa-check i"></i>Convert scanned PDF to Word with OCR, sign with digital signatures, convert to PDF/A</p>
+                    <p><i class="fa-solid fa-check i"></i>No Ads</p>
+                    <p><i class="fa-solid fa-check i"></i>Customer support</p>
+                </div>
+                <div class="pricing-grid">
+                    <h3>Business</h3>
+                    <p class="dollar"><i class="fa-solid fa-dollar-sign"></i>0</p>
+                    <a href="#" class="btn btn-outline-danger">Get Started</a>
+                    <h5>Free features include:</h5>
+                    <p class="pt-3"><i class="fa-solid fa-check i"></i>Access to iLovePDF tools</p>
+                    <p><i class="fa-solid fa-check i"></i>Limited document processing</p>
+                    <p><i class="fa-solid fa-check i"></i>Work on Web</p>
                 </div>
             </div>
             
@@ -260,7 +281,6 @@
                     <ul class="footer-nav">
                         <li><a href="index.html" class="footer-link">Home</a></li>
                         <li><a href="security.html" class="footer-link">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="footer-link">Terms of Services</a></li>
                         <li><a href="pricing.html" class="footer-link">Pricing Page</a></li>
                         <li><a href="blog.html.html" class="footer-link">Blog</a></li>
                         <li><a href="about.html" class="footer-link">About</a></li>
@@ -311,13 +331,13 @@
             const displayValue = document.getElementById("display-value");
         
             monthlyOption.addEventListener("click", () => {
-                displayValue.textContent = "1234";
+                displayValue.textContent = "4";
                 monthlyOption.classList.add("active");
                 yearlyOption.classList.remove("active");
             });
         
             yearlyOption.addEventListener("click", () => {
-                displayValue.textContent = "4321";
+                displayValue.textContent = "8";
                 yearlyOption.classList.add("active");
                 monthlyOption.classList.remove("active");
             });

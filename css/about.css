@@ -265,7 +265,6 @@
     background: #ffffff;
     border-radius: 7px;
     padding: 5px;
-    position: relative;
     font-family: Arial, sans-serif;
     width: fit-content;
 }
@@ -421,5 +420,59 @@
     .faq-texts .col-md-8 h5{
         font-size: 10pt;
         color: blueviolet;
+    }
+}
+/*=====pricing====*/
+.pricing{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    grid-gap: 30px;
+}
+.pricing-grid{
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.pricing-grid:nth-child(even){
+    background-color: #222121;
+    color: #fff;
+}
+.pricing-grid h3{
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+.pricing-grid h5{
+    padding-top: 25px;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+.pricing-grid p{
+    font-size: 18px;
+    margin: 0;
+    line-height: 30px;
+}
+.pricing-grid .i{
+    color: #00c421;
+    margin-right: 8px;
+}
+.pricing-grid .dollar{
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 50px;
+}
+@media(max-width: 992px){
+    .pricing{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 776px){
+    .pricing{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
