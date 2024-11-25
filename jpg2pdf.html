@@ -12,6 +12,8 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/about.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 <body>   
 	<!--Navigation-Bar Start-->
@@ -200,13 +202,26 @@
                 </div>
             </div>
         </div>
-        <div class="container d-flex justify-content-center align-items-center py-5">
-            <div class="convert-btn my-3">
-                <input type="file" id="file-upload">
-                <label for="file-upload">Upload File</label>
-            </div>
+    </div>
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="convert-btn my-5">
+            <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
         </div>
     </div>
+    <div class="container">
+      <div class="upload-container mb-5" id="add-more-btn">
+        <div class="file-list" id="file-list">
+        </div>
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <a href="download.html" class="btn btn-primary btn-lg mt-4" style="font-size: 24px;">Convert</a>
+        </div>
+        <button class="add-more-btn" onclick="triggerAddMoreInput()"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+        <!-- Hidden File Inputs -->
+        <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+        <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
     <!--Converter End--> 
       
 
