@@ -16,14 +16,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
   <style>
     .upload-container {
-      max-width: 900px;
-      margin: auto;
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-    }
-    .upload-container {
       width: 100%;
       max-width: 900px;
       margin: auto;
@@ -31,9 +23,15 @@
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 20px;
+      display: none;
       position: relative;
   }
-
+  .upload-pp{
+    height: 1000px;
+    width: 100%;
+    background-color: #0077B5;
+    color: #fff;
+  }
     .file-list {
       display: flex;
       flex-wrap: wrap;
@@ -81,22 +79,12 @@
   .file-item .rotate-btn {
       left: 5px;
       color: #0d6efd;
-  }
-  .upload-btn {
-      background-color: #c00013;
-      border-radius: 15px;
-      min-width: 250px;
-      padding: 20px 40px;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #fff;
-      border: none;
-      cursor: pointer;
+      display: none;
   }
   .add-more-btn {
-      position: fixed;
+      position: absolute;
       bottom: 20px;
-      right: 20px;
+      right: -20px;
       width: 50px;
       height: 50px;
       background-color: #c00013;
@@ -107,7 +95,6 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      display: none;
   }
   .add-more-btn i {
       font-size: 20px;
@@ -300,20 +287,22 @@
                 </div>
             </div>
         </div>
-        <div class="container d-flex justify-content-center align-items-center py-5">
-            <div class="convert-btn my-3">
-                <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
-            </div>
-        </div>
-        <div class="container pt-3">
-          <div class="upload-container">
-            <div class="file-list" id="file-list"></div>
-          </div>
-          <!-- <div class="file-list" id="file-list"></div>
-          <button class="add-more-btn" onclick="triggerAddMoreInput()"><i class="fas fa-plus"></i> Add More</button> -->
-        </div>
     </div>
-    
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="convert-btn my-5">
+          <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
+      </div>
+  </div>
+  <div class="container">
+    <div class="upload-container mb-5" id="add-more-btn">
+      <div class="file-list" id="file-list">
+      </div>
+      <div class="w-100 d-flex justify-content-center align-items-center">
+        <a href="download.html" class="btn btn-primary btn-lg mt-4" style="font-size: 24px;">Convert</a>
+      </div>
+      <button class="add-more-btn" onclick="triggerAddMoreInput()"><i class="fas fa-plus"></i></button>
+    </div>
+  </div>
       <!-- Hidden File Inputs -->
       <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
       <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
@@ -399,95 +388,91 @@
     <script src="js/script.js"></script>
 
     <script>
-        $(document).ready(function () {
+      $(document).ready(function () {
           const fileList = $("#file-list");
-    
-          // Handle file uploads
+          const addMoreBtn = $("#add-more-btn");
+
           function handleFiles(files) {
-            for (let i = 0; i < files.length; i++) {
-              const file = files[i];
-              const fileItem = $("<div>").addClass("file-item");
-    
-              const removeBtn = $("<div>")
-                .addClass("remove-btn")
-                .html('<i class="fas fa-times"></i>')
-                .on("click", function () {
-                  fileItem.remove();
-                });
-    
-              const rotateBtn = $("<div>")
-                .addClass("rotate-btn")
-                .html('<i class="fas fa-sync-alt"></i>');
-    
-              let rotation = 0;
-              rotateBtn.on("click", function () {
-                rotation = (rotation + 90) % 360;
-                if (file.type.startsWith("image")) {
-                  img.css("transform", `rotate(${rotation}deg)`);
-                } else if (file.type === "application/pdf") {
-                  canvas.css("transform", `rotate(${rotation}deg)`);
-                }
-              });
-    
-              if (file.type.startsWith("image")) {
-                const img = $("<img>");
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                  img.attr("src", e.target.result);
-                };
-                reader.readAsDataURL(file);
-                fileItem.append(img);
-              } else if (file.type === "application/pdf") {
-                const canvas = $("<canvas>");
-                const context = canvas[0].getContext("2d");
-                const pdfjsLib = window["pdfjs-dist/build/pdf"];
-                const loadingTask = pdfjsLib.getDocument(URL.createObjectURL(file));
-    
-                loadingTask.promise.then(function (pdf) {
-                  pdf.getPage(1).then(function (page) {
-                    const viewport = page.getViewport({ scale: 0.5 });
-                    canvas.attr("width", viewport.width);
-                    canvas.attr("height", viewport.height);
-    
-                    const renderContext = {
-                      canvasContext: context,
-                      viewport: viewport,
-                    };
-    
-                    page.render(renderContext).promise.then(function () {
-                      fileItem.append(canvas);
-                    });
+              for (let i = 0; i < files.length; i++) {
+                  const file = files[i];
+                  const fileItem = $("<div>").addClass("file-item");
+                  const removeBtn = $("<div>")
+                      .addClass("remove-btn")
+                      .html('<i class="fas fa-times"></i>')
+                      .on("click", function () {
+                          fileItem.remove();
+                          if (!fileList.children().length) {
+                              addMoreBtn.hide();
+                          }
+                      });
+                  const rotateBtn = $("<div>")
+                      .addClass("rotate-btn")
+                      .html('<i class="fas fa-sync-alt"></i>');
+                  let rotation = 0;
+                  rotateBtn.on("click", function () {
+                      rotation = (rotation + 90) % 360;
+                      if (file.type.startsWith("image")) {
+                          img.css("transform", `rotate(${rotation}deg)`);
+                      } else if (file.type === "application/pdf") {
+                          canvas.css("transform", `rotate(${rotation}deg)`);
+                      }
                   });
-                });
-              } else {
-                alert("Unsupported file type: " + file.type);
-                continue;
+                  
+                  if (file.type.startsWith("image")) {
+                      const img = $("<img>");
+                      const reader = new FileReader();
+                      reader.onload = function (e) {
+                          img.attr("src", e.target.result);
+                      };
+                      reader.readAsDataURL(file);
+                      fileItem.append(img);
+                  } else if (file.type === "application/pdf") {
+                      const canvas = $("<canvas>");
+                      const context = canvas[0].getContext("2d");
+                      const pdfjsLib = window["pdfjs-dist/build/pdf"];
+                      const loadingTask = pdfjsLib.getDocument(URL.createObjectURL(file));
+                      loadingTask.promise.then(function (pdf) {
+                          pdf.getPage(1).then(function (page) {
+                              const viewport = page.getViewport({ scale: 0.5 });
+                              canvas.attr("width", viewport.width);
+                              canvas.attr("height", viewport.height);
+                              const renderContext = {
+                                  canvasContext: context,
+                                  viewport: viewport,
+                              };
+                              page.render(renderContext).promise.then(function () {
+                                  fileItem.append(canvas);
+                              });
+                          });
+                      });
+                  } else {
+                      alert("Unsupported file type: " + file.type);
+                      continue;
+                  }
+                  fileItem.append(removeBtn).append(rotateBtn);
+                  fileList.append(fileItem);
               }
-    
-              fileItem.append(removeBtn).append(rotateBtn);
-              fileList.append(fileItem);
-            }
+              if (fileList.children().length) {
+                  addMoreBtn.show();
+              }
           }
-    
-          // Trigger upload input
+
           window.triggerUploadInput = function () {
-            $("#upload-input").click();
+              $("#upload-input").click();
           };
-    
-          // Trigger add-more input
+
           window.triggerAddMoreInput = function () {
-            $("#add-more-input").click();
+              $("#add-more-input").click();
           };
-    
-          // Listen for uploads
+
           $("#upload-input").on("change", function (e) {
-            handleFiles(e.target.files);
+              handleFiles(e.target.files);
           });
-    
+
           $("#add-more-input").on("change", function (e) {
-            handleFiles(e.target.files);
+              handleFiles(e.target.files);
           });
-        });
-      </script>
+      });
+  </script>
 </body>
 </html>
