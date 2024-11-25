@@ -4,120 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Home Page</title>
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--Font-Awsome css-->
     <link rel="stylesheet" href="css/all.min.css">
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" href="css/about.css"> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    .upload-container {
-      max-width: 900px;
-      margin: auto;
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-    }
-
-    .file-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .file-item {
-      position: relative;
-      width: 180px;
-      height: 200px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      flex-shrink: 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .file-item img,
-    .file-item canvas {
-      max-width: 100%;
-      max-height: 100%;
-      transition: transform 0.3s ease;
-    }
-
-    .file-item .rotate-btn,
-    .file-item .remove-btn {
-      position: absolute;
-      top: 5px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: white;
-      border: 1px solid #ddd;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .file-item .remove-btn {
-      right: 5px;
-      color: #dc3545;
-    }
-
-    .file-item .rotate-btn {
-      left: 5px;
-      color: #0d6efd;
-    }
-
-    .buttons-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .upload-btn,
-    .add-more-btn {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      color: white;
-    }
-
-    .upload-btn {
-      background-color: #0d6efd;
-    }
-
-    .upload-btn:hover {
-      background-color: #0a58ca;
-    }
-
-    .add-more-btn {
-      background-color: red;
-    }
-
-    .add-more-btn:hover {
-      background-color: #b20000;
-    }
-  </style>
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>   
 	<!--Navigation-Bar Start-->
@@ -288,103 +182,140 @@
         </div>
     </header>
     <!--Navigation-Bar End-->
-    <div class="convert-page">
-        <div class="convert-section py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-2 d-flex justify-content-end align-items-center">
-                        <img src="images/pdf-svgrepo-com.svg" alt="">
-                    </div>
-                    <div class="col-8 text-white d-flex flex-column justify-content-center align-items-center">
-                        <h2>Compress The PDF File</h2>
-                        <p>If you need PDF file compress to upload your PDF.</p>
-                    </div>
-                    <div class="col-2 d-flex justify-content-start align-items-center">
-                        <img src="images/pngtree-zip-or-compressed-file-png-image_5170688.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container d-flex justify-content-center align-items-center py-5">
-            <div class="convert-btn my-3">
-                <!-- <input type="file" class="upload-btn" onclick="triggerUploadInput()" id="file-upload">
-                <label for="file-upload">Upload File</label> -->
-                <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
-            </div>
-        </div>
-        <!-- <div class="container py-2">
-            <div class=" row file-show justify-content-center">
-                <div class="col-md-4 show-area d-flex justify-content-center align-items-center" style="background-color: #fff;box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);padding: 10px;border-radius: 7px;">
-                    <img src="images/screencapture-ilovepdf-2024-11-24-15_31_18.pdf" alt="">
-                    <iframe src="images/screencapture-ilovepdf-2024-11-24-15_31_18.pdf" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div> -->
-    </div>
-    <div class="upload-container">
-        <div class="header text-center">
-          <h3>Merge Files</h3>
-          <p>To change the order of your files, drag and drop them as you want.</p>
-        </div>
-    
-        <div class="buttons-container">
-          <!-- Upload Button -->
-          <!-- <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button> -->
-    
-          <!-- Add More Button -->
-          <button class="add-more-btn" onclick="triggerAddMoreInput()">
-            <i class="fas fa-plus"></i> Add More
-          </button>
-        </div>
-    
-        <div class="file-list" id="file-list"></div>
-    </div>
-    
-      <!-- Hidden File Inputs -->
-      <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
-      <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
-      
 
+    <div class="pt-5" style="background-color: #ececec;">
+        <div class="container d-flex flex-column align-items-center">
+            <h2 class="text-center display-3">PDFs have been compressed!</h2>
+            <div class="d-flex flex-row justify-content-center align-items-center mt-5">
+                <div class="download-back"><a href="#" class="back-btn"><i class="fa-solid fa-arrow-left i"></i></a></div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="#" class="download-btn"><i class="fa-solid fa-download"></i> Download compressed PDF</a>
+                </div>
+            </div>
+
+            <div class="row w-100 d-flex justify-content-center align-items-center py-5 mt-5">
+                <div class="col-md-10" style="background-color: #fff; padding: 20px; border-radius: 7px">
+                    <h3 style="font-size: 18px;font-weight: 600;margin-bottom: 10px;">Continue to......</h3>
+                    <div class="row">
+                        <div class="col-md-4 justify-content-center align-items-center">
+                            <div class="continue-menu">
+                                <img src="images/jpg2pdf.png"  alt="">
+                                <a href="jpg2pdf.html">JPG to PDF</a>
+                            </div>
+                            <div class="continue-menu">
+                                <img src="images/word2pdf.png"  alt="">
+                                <a href="word2pdf.html">WORD to PDF</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 justify-content-center align-items-center">
+                            <div class="continue-menu">
+                                <img src="images/pdf2word.png" alt="">
+                                <a href="pdf2word.html">PDF to WORD</a>
+                            </div>
+                            <div class="continue-menu">
+                                <img src="images/pdf2jpg.png"  alt="">
+                                <a href="pdf2jpg.html">PDF to JPG</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 justify-content-center align-items-center">
+                            <div class="continue-menu">
+                                <img src="images/448706.png" alt="">
+                                <a href="merge.html" class="footer-link">Merge PDF</a>
+                            </div>
+                            <div class="continue-menu">
+                                <img src="images/split-6.png"  alt="">
+                                <a href="split.html">Split PDF</a>
+                            </div>
+                            <div class="continue-menu">
+                                <img src="images/split-6.png"  alt="">
+                                <a href="split.html">Split PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <section class="text-containt" style="padding: 50px 0px;">
+        <div class="text-center">
+            <h1>The PDF software trusted by millions of users</h1>
+            <p>
+                YourLogo is your number 1 web app for editing PDF with ease. Enjoy all the tools you need to work efficiently with your digital documents while keeping your data safe and secure.
+            </p>
+        </div>
+        <div class="certificate-row">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="images/ios.svg" alt="PDF Association Certificate">
+                <p>IOS</p>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="images/android.svg" alt="ISO 27001 Certificate">
+                <p>ANDROID</p>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="images/apple.svg" alt="ISO 27001 Certificate">
+                <p>MAC</p>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="images/windows.svg" alt="Secure SSL Encryption Certificate">
+                <p>WINDOWS</p>
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <img src="images/web.svg" alt="Secure SSL Encryption Certificate">
+                <p>WEB</p>
+            </div>
+            
+            
+            
+            
+        </div>
+    </section>
+    
     <!--Footer-->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="footer-title">ILOVEPDF</h5>
+                    <h5 class="footer-title">PDF to Others</h5>
                     <ul class="footer-nav">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="security.html" class="footer-link">Security</a></li>
-                        <li><a href="tools.html" class="footer-link">Tools</a></li>
-                        <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="contact.html" class="footer-link">Contact</a></li>
-                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="pdf2word.html" class="footer-link">PDF to Word</a></li>
+                        <li><a href="pdf2xl.html" class="footer-link">PDF to Excel</a></li>
+                        <li><a href="pdf2pp.html" class="footer-link">PDF to PowerPoint</a></li>
+                        <li><a href="pdf2jpg.html" class="footer-link">PDF to JPG</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="footer-title">PRODUCT</h5>
+                    <h5 class="footer-title">Othes to PDF</h5>
                     <ul class="footer-nav">
-                        <li><a href="#" class="footer-link">iLovePDF Desktop</a></li>
-                        <li><a href="#" class="footer-link">iLovePDF Mobile</a></li>
-                        <li><a href="#" class="footer-link">Developers</a></li>
-                        <li><a href="#" class="footer-link">Features</a></li>
-                        <li><a href="#" class="footer-link">iloveimg.com</a></li>
+                        <li><a href="word2pdf.html" class="footer-link">Wprd to PDF</a></li>
+                        <li><a href="xl2pdf.html" class="footer-link">Excel to PDF</a></li>
+                        <li><a href="pp2pdf.html" class="footer-link">PowerPoint to PDF</a></li>
+                        <li><a href="jpg2pdf.html" class="footer-link">JPG to PDF</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
-                    <h5 class="footer-title">SOLUTIONS</h5>
+                    <h5 class="footer-title">Others Tools</h5>
                     <ul class="footer-nav">
-                        <li><a href="#" class="footer-link">Business</a></li>
-                        <li><a href="#" class="footer-link">Education</a></li>
+                        <li><a href="merge.html" class="footer-link">MERGE PDF</a></li>
+                        <li><a href="split.html" class="footer-link">SPLIT PDF</a></li>
+                        <li><a href="compress.html" class="footer-link">COMPRESS PDF</a></li>
+                        <li><a href="edit.html" class="footer-link">Edit PDF</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <h5 class="footer-title">COMPANY</h5>
                     <ul class="footer-nav">
-                        <li><a href="#" class="footer-link">Our Story</a></li>
-                        <li><a href="#" class="footer-link">Blog</a></li>
-                        <li><a href="#" class="footer-link">Press</a></li>
-                        <li><a href="#" class="footer-link">Legal & Privacy</a></li>
-                        <li><a href="#" class="footer-link">Contact</a></li>
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="security.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="footer-link">Terms of Services</a></li>
+                        <li><a href="pricing.html" class="footer-link">Pricing Page</a></li>
+                        <li><a href="blog.html.html" class="footer-link">Blog</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
                     </ul>
                 </div>
             </div>
@@ -407,7 +338,7 @@
     
             <!-- Footer Bottom -->
             <div class="footer-bottom pt-3">
-                <p>© iLovePDF 2024 ® - Your PDF Editor</p>
+                <p>© Yourlogo 2024 ® - Your PDF Editor</p>
                 <div class="social-icons">
                     <a href="#" style="color: #1da1f2;"><i class="fa-brands fa-twitter"></i></a>
                     <a href="#" style="color: #316FF6;"><i class="fa-brands fa-facebook"></i></a>
@@ -423,97 +354,5 @@
     <!--Java Scripts-->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-
-    <script>
-        $(document).ready(function () {
-          const fileList = $("#file-list");
-    
-          // Handle file uploads
-          function handleFiles(files) {
-            for (let i = 0; i < files.length; i++) {
-              const file = files[i];
-              const fileItem = $("<div>").addClass("file-item");
-    
-              const removeBtn = $("<div>")
-                .addClass("remove-btn")
-                .html('<i class="fas fa-times"></i>')
-                .on("click", function () {
-                  fileItem.remove();
-                });
-    
-              const rotateBtn = $("<div>")
-                .addClass("rotate-btn")
-                .html('<i class="fas fa-sync-alt"></i>');
-    
-              let rotation = 0;
-              rotateBtn.on("click", function () {
-                rotation = (rotation + 90) % 360;
-                if (file.type.startsWith("image")) {
-                  img.css("transform", `rotate(${rotation}deg)`);
-                } else if (file.type === "application/pdf") {
-                  canvas.css("transform", `rotate(${rotation}deg)`);
-                }
-              });
-    
-              if (file.type.startsWith("image")) {
-                const img = $("<img>");
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                  img.attr("src", e.target.result);
-                };
-                reader.readAsDataURL(file);
-                fileItem.append(img);
-              } else if (file.type === "application/pdf") {
-                const canvas = $("<canvas>");
-                const context = canvas[0].getContext("2d");
-                const pdfjsLib = window["pdfjs-dist/build/pdf"];
-                const loadingTask = pdfjsLib.getDocument(URL.createObjectURL(file));
-    
-                loadingTask.promise.then(function (pdf) {
-                  pdf.getPage(1).then(function (page) {
-                    const viewport = page.getViewport({ scale: 0.5 });
-                    canvas.attr("width", viewport.width);
-                    canvas.attr("height", viewport.height);
-    
-                    const renderContext = {
-                      canvasContext: context,
-                      viewport: viewport,
-                    };
-    
-                    page.render(renderContext).promise.then(function () {
-                      fileItem.append(canvas);
-                    });
-                  });
-                });
-              } else {
-                alert("Unsupported file type: " + file.type);
-                continue;
-              }
-    
-              fileItem.append(removeBtn).append(rotateBtn);
-              fileList.append(fileItem);
-            }
-          }
-    
-          // Trigger upload input
-          window.triggerUploadInput = function () {
-            $("#upload-input").click();
-          };
-    
-          // Trigger add-more input
-          window.triggerAddMoreInput = function () {
-            $("#add-more-input").click();
-          };
-    
-          // Listen for uploads
-          $("#upload-input").on("change", function (e) {
-            handleFiles(e.target.files);
-          });
-    
-          $("#add-more-input").on("change", function (e) {
-            handleFiles(e.target.files);
-          });
-        });
-      </script>
 </body>
 </html>
