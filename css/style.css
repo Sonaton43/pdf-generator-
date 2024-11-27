@@ -10,7 +10,7 @@
 }
 /* Nav Menu Area Start*/
 .custom-nav {
-    position: sticky;
+    position: fixed;
     background-color: #ffffff;
     padding: 0 50px;
     height: 70px;
@@ -91,6 +91,7 @@
 }
 .index-body{
     background-color: #ececec;
+    padding-top: 70px;
 }
 body.dark-theme {
     background-color: #333;
@@ -106,6 +107,15 @@ body.dark-theme .custom-nav {background-color: #222;}
 body.dark-theme .custom-nav .nav-items-are ul li a{color: #fff;}
 body.dark-theme .custom-nav .nav-items-are .logo a{color: #fff;}
 body.dark-theme .bar-icon{color: #fff;}
+body.dark-theme .buttons-are .login-btn {
+    color: #fff;
+    font-weight: 600;
+}
+body.dark-theme .buttons-are .signup-btn {
+    color: #000;
+    background: #fff;
+    font-weight: 600;
+}
 /*== Dark Mode Code ==*/
 
 
@@ -373,7 +383,7 @@ body.dark-theme .dropdown-menu-are-one{background-color: #222;}
     margin: 0 auto;
     margin-bottom: 20px;
     display: grid;
-    gap: 5px;
+    gap: 8px;
 }
 
 .grid-item {
