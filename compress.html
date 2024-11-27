@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/about.css"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 <body>   
 	<!--Navigation-Bar Start-->
@@ -184,6 +184,7 @@
         </div>
     </header>
     <!--Navigation-Bar End-->
+    <!--Converter Start-->
     <div class="convert-page">
         <div class="convert-section py-5">
             <div class="container">
@@ -191,7 +192,7 @@
                     <div class="col-2 d-flex justify-content-end align-items-center">
                         <img src="images/pdf-svgrepo-com.svg" alt="">
                     </div>
-                    <div class="col-8 text-white d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-8 text-white d-flex flex-column justify-content-center align-items-center text-center">
                         <h2>Compress The PDF File</h2>
                         <p>If you need PDF file compress to upload your PDF.</p>
                     </div>
@@ -203,191 +204,104 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center align-items-center">
-      <div class="convert-btn my-5">
-          <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
-      </div>
-  </div>
-  <div class="container">
-    <div class="upload-container mb-5" id="add-more-btn">
-      <div class="file-list" id="file-list">
-      </div>
-      <div class="w-100 d-flex justify-content-center align-items-center">
-        <a href="download.html" class="btn btn-primary btn-lg mt-4" style="font-size: 24px;">Convert</a>
-      </div>
-      <button class="add-more-btn" onclick="triggerAddMoreInput()"><i class="fas fa-plus"></i></button>
+        <div class="convert-btn my-5">
+            <button class="upload-btn" onclick="triggerUploadInput()">Upload Files</button>
+        </div>
     </div>
-  </div>
-      <!-- Hidden File Inputs -->
-      <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
-      <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+    <div class="container">
+      <div class="upload-container mb-5" id="add-more-btn">
+        <div class="file-list" id="file-list">
+        </div>
+        <div class="w-100 d-flex justify-content-center align-items-center">
+          <a href="download.html" class="btn btn-primary btn-lg mt-4" style="font-size: 24px;">Convert</a>
+        </div>
+        <button class="add-more-btn" onclick="triggerAddMoreInput()"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+        <!-- Hidden File Inputs -->
+        <input type="file" id="upload-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+        <input type="file" id="add-more-input" accept=".pdf,.png,.jpg,.jpeg" multiple style="display: none;">
+    <!--Converter End-->
       
 
-    <!--Footer-->
+     <!--Footer-->
     <footer class="footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <h5 class="footer-title">PDF to Others</h5>
-                  <ul class="footer-nav">
-                      <li><a href="pdf2word.html" class="footer-link">PDF to Word</a></li>
-                      <li><a href="pdf2xl.html" class="footer-link">PDF to Excel</a></li>
-                      <li><a href="pdf2pp.html" class="footer-link">PDF to PowerPoint</a></li>
-                      <li><a href="pdf2jpg.html" class="footer-link">PDF to JPG</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <h5 class="footer-title">Othes to PDF</h5>
-                  <ul class="footer-nav">
-                      <li><a href="word2pdf.html" class="footer-link">Wprd to PDF</a></li>
-                      <li><a href="xl2pdf.html" class="footer-link">Excel to PDF</a></li>
-                      <li><a href="pp2pdf.html" class="footer-link">PowerPoint to PDF</a></li>
-                      <li><a href="jpg2pdf.html" class="footer-link">JPG to PDF</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <h5 class="footer-title">Others Tools</h5>
-                  <ul class="footer-nav">
-                      <li><a href="merge.html" class="footer-link">MERGE PDF</a></li>
-                      <li><a href="split.html" class="footer-link">SPLIT PDF</a></li>
-                      <li><a href="compress.html" class="footer-link">COMPRESS PDF</a></li>
-                      <li><a href="edit.html" class="footer-link">Edit PDF</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4">
-                  <h5 class="footer-title">COMPANY</h5>
-                  <ul class="footer-nav">
-                      <li><a href="index.html" class="footer-link">Home</a></li>
-                      <li><a href="security.html" class="footer-link">Privacy Policy</a></li>
-                      <li><a href="pricing.html" class="footer-link">Pricing Page</a></li>
-                      <li><a href="blog.html.html" class="footer-link">Blog</a></li>
-                      <li><a href="about.html" class="footer-link">About</a></li>
-                      <li><a href="contact.html" class="footer-link">Contact</a></li>
-                      <li><a href="faq.html" class="footer-link">FAQ</a></li>
-                  </ul>
-              </div>
-          </div>
-  
-          <!-- Bottom Section -->
-          <!-- <div class="row">
-              <div class="col-md-6 mb-3">
-                  <div class="d-flex align-items-center">
-                      <img src="globe-icon.png" alt="Language" style="width: 20px; height: 20px; margin-right: 5px;">
-                      <span>English</span>
-                  </div>
-              </div>
-              <div class="col-md-6 text-md-end mb-3">
-                  <div class="app-badges">
-                      <img src="google-play-badge.png" alt="Google Play">
-                      <img src="app-store-badge.png" alt="App Store">
-                  </div>
-              </div>
-          </div> -->
-  
-          <!-- Footer Bottom -->
-          <div class="footer-bottom pt-3">
-              <p>© Yourlogo 2024 ® - Your PDF Editor</p>
-              <div class="social-icons">
-                  <a href="#" style="color: #1da1f2;"><i class="fa-brands fa-twitter"></i></a>
-                  <a href="#" style="color: #316FF6;"><i class="fa-brands fa-facebook"></i></a>
-                  <a href="#" style="color: #0077B5;"><i class="fa-brands fa-linkedin"></i></a>
-                  <a href="#" style="color: #fc8f00;"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#" style="color: #ffffff"><i class="fa-brands fa-tiktok"></i></a>
-              </div>
-          </div>
-      </div>
-  </footer>
-  <!--Font-Awsome js-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-title">PDF to Others</h5>
+                    <ul class="footer-nav">
+                        <li><a href="pdf2word.html" class="footer-link">PDF to Word</a></li>
+                        <li><a href="pdf2xl.html" class="footer-link">PDF to Excel</a></li>
+                        <li><a href="pdf2pp.html" class="footer-link">PDF to PowerPoint</a></li>
+                        <li><a href="pdf2jpg.html" class="footer-link">PDF to JPG</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-title">Othes to PDF</h5>
+                    <ul class="footer-nav">
+                        <li><a href="word2pdf.html" class="footer-link">Wprd to PDF</a></li>
+                        <li><a href="xl2pdf.html" class="footer-link">Excel to PDF</a></li>
+                        <li><a href="pp2pdf.html" class="footer-link">PowerPoint to PDF</a></li>
+                        <li><a href="jpg2pdf.html" class="footer-link">JPG to PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-title">Others Tools</h5>
+                    <ul class="footer-nav">
+                        <li><a href="merge.html" class="footer-link">MERGE PDF</a></li>
+                        <li><a href="split.html" class="footer-link">SPLIT PDF</a></li>
+                        <li><a href="compress.html" class="footer-link">COMPRESS PDF</a></li>
+                        <li><a href="edit.html" class="footer-link">Edit PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <h5 class="footer-title">COMPANY</h5>
+                    <ul class="footer-nav">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="security.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="pricing.html" class="footer-link">Pricing Page</a></li>
+                        <li><a href="blog.html.html" class="footer-link">Blog</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Bottom Section -->
+            <!-- <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="d-flex align-items-center">
+                        <img src="globe-icon.png" alt="Language" style="width: 20px; height: 20px; margin-right: 5px;">
+                        <span>English</span>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end mb-3">
+                    <div class="app-badges">
+                        <img src="google-play-badge.png" alt="Google Play">
+                        <img src="app-store-badge.png" alt="App Store">
+                    </div>
+                </div>
+            </div> -->
+    
+            <!-- Footer Bottom -->
+            <div class="footer-bottom pt-3">
+                <p>© Yourlogo 2024 ® - Your PDF Editor</p>
+                <div class="social-icons">
+                    <a href="#" style="color: #1da1f2;"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" style="color: #316FF6;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" style="color: #0077B5;"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" style="color: #fc8f00;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="color: #ffffff"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Font-Awsome js-->
     <script src="js/all.min.js"></script>
     <!--Java Scripts-->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
-
-    <script>
-      $(document).ready(function () {
-          const fileList = $("#file-list");
-          const addMoreBtn = $("#add-more-btn");
-
-          function handleFiles(files) {
-              for (let i = 0; i < files.length; i++) {
-                  const file = files[i];
-                  const fileItem = $("<div>").addClass("file-item");
-                  const removeBtn = $("<div>")
-                      .addClass("remove-btn")
-                      .html('<i class="fas fa-times"></i>')
-                      .on("click", function () {
-                          fileItem.remove();
-                          if (!fileList.children().length) {
-                              addMoreBtn.hide();
-                          }
-                      });
-                  const rotateBtn = $("<div>")
-                      .addClass("rotate-btn")
-                      .html('<i class="fas fa-sync-alt"></i>');
-                  let rotation = 0;
-                  rotateBtn.on("click", function () {
-                      rotation = (rotation + 90) % 360;
-                      if (file.type.startsWith("image")) {
-                          img.css("transform", `rotate(${rotation}deg)`);
-                      } else if (file.type === "application/pdf") {
-                          canvas.css("transform", `rotate(${rotation}deg)`);
-                      }
-                  });
-                  
-                  if (file.type.startsWith("image")) {
-                      const img = $("<img>");
-                      const reader = new FileReader();
-                      reader.onload = function (e) {
-                          img.attr("src", e.target.result);
-                      };
-                      reader.readAsDataURL(file);
-                      fileItem.append(img);
-                  } else if (file.type === "application/pdf") {
-                      const canvas = $("<canvas>");
-                      const context = canvas[0].getContext("2d");
-                      const pdfjsLib = window["pdfjs-dist/build/pdf"];
-                      const loadingTask = pdfjsLib.getDocument(URL.createObjectURL(file));
-                      loadingTask.promise.then(function (pdf) {
-                          pdf.getPage(1).then(function (page) {
-                              const viewport = page.getViewport({ scale: 0.5 });
-                              canvas.attr("width", viewport.width);
-                              canvas.attr("height", viewport.height);
-                              const renderContext = {
-                                  canvasContext: context,
-                                  viewport: viewport,
-                              };
-                              page.render(renderContext).promise.then(function () {
-                                  fileItem.append(canvas);
-                              });
-                          });
-                      });
-                  } else {
-                      alert("Unsupported file type: " + file.type);
-                      continue;
-                  }
-                  fileItem.append(removeBtn).append(rotateBtn);
-                  fileList.append(fileItem);
-              }
-              if (fileList.children().length) {
-                  addMoreBtn.show();
-              }
-          }
-
-          window.triggerUploadInput = function () {
-              $("#upload-input").click();
-          };
-
-          window.triggerAddMoreInput = function () {
-              $("#add-more-input").click();
-          };
-
-          $("#upload-input").on("change", function (e) {
-              handleFiles(e.target.files);
-          });
-
-          $("#add-more-input").on("change", function (e) {
-              handleFiles(e.target.files);
-          });
-      });
-  </script>
 </body>
 </html>
