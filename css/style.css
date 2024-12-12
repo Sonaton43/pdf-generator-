@@ -688,8 +688,8 @@ body.dark-theme .footer{background-color: #222;}
 /*== Dark Mode Code ==*/
 
 .side-navigation{
-    max-width: 250px;
-    min-width: 250px;
+    max-width: 270px;
+    min-width: 269px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.1);
 }
