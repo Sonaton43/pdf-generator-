@@ -691,7 +691,6 @@ body.dark-theme .footer{background-color: #222;}
     max-width: 270px;
     min-width: 269px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
 }
 .user-details img{
     height: 50px;
@@ -709,5 +708,31 @@ body.dark-theme .footer{background-color: #222;}
 .user-details-text .user-type{
     color: #e60000;
     font-weight: 600;
+}
+.user-profile{
+    padding: 20px 10px;
+}
+.user-profile h5{
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #222;
+}
+.user-profile-ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.user-profile-ul li{
+    padding: 5px 10px;
+}
+.user-profile-ul li a{
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #222;
+}
+.user-profile-ul li:hover{
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
