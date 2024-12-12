@@ -690,4 +690,23 @@ body.dark-theme .footer{background-color: #222;}
 .side-navigation{
     max-width: 250px;
     min-width: 250px;
+    padding: 20px;
 }
+.user-details img{
+    height: 50px;
+    width: 50px;
+}
+.user-details-text{
+    margin: 0;
+    padding: 0 14px;
+}
+.user-details-text p{
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+.user-details-text .user-type{
+    color: #e60000;
+    font-weight: 600;
+}
+
