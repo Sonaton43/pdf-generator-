@@ -80,6 +80,15 @@
     padding: 4px 7px;
     border-radius: 5px;
 }
+.buttons-are .user-btn{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    background: #f7901e;
+    padding: 7px 10px;
+    border-radius: 50%;
+}
 .bar-icon {
     text-decoration: none;
     color: #000000;
@@ -180,6 +189,68 @@ body.dark-theme .fullscreen-nav {background-color: #111;}
 /* Dropdown Menu */
 .dropdown-are {
     position: relative;
+}
+.dropdown-user {
+    position: relative;
+}
+.dropdown-menu-user {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 62px;
+    right: -8px;
+    background-color: #ffffff;
+    border: 0.1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 1000; /* Adjust if necessary */
+}
+.user-ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.user-ul li{
+    padding: 5px 15px;
+    font-size: 14px;
+    color: #222;
+    border-radius: 10px;
+}
+.user-ul li:hover{
+    color: #e60000;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.dropdown-user-top {
+    position: absolute;
+    /* opacity: 0;
+    visibility: hidden; */
+    top: -10px;
+    right: 17px;
+    color: #ec0000;
+    transition: 0.5s;
+    z-index: -1;
+}
+.dropdown-user-top .top-p {
+    font-size: 30px;
+    color: #ffffff;
+    transform: rotate(-90deg);
+}
+.dropdown-hidden-user{
+    position: absolute;
+    opacity: 0;
+    top: -28px;
+    right: 0;
+    background-color: #e60000;
+    transition: 0.5s;
+    width: 50px;
+    height: 30px;
+}
+.dropdown-user:hover .dropdown-menu-user {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 .dropdown-menu-are{
     opacity: 0;
