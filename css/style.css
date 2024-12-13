@@ -127,6 +127,10 @@ body.dark-theme .buttons-are .signup-btn {
     background: #fff;
     font-weight: 600;
 }
+body.dark-theme .buttons-are .user-btn {
+    color: #000;
+    background: #fff;
+}
 /*== Dark Mode Code ==*/
 
 
@@ -210,21 +214,28 @@ body.dark-theme .fullscreen-nav {background-color: #111;}
     transition: opacity 0.5s, visibility 0.5s;
     z-index: 1000; /* Adjust if necessary */
 }
-.user-ul{
+.dropdown-menu-user ul{
     padding: 0;
     margin: 0;
     list-style: none;
 }
-
-.user-ul li{
+.dropdown-menu-user li{
     padding: 5px 15px;
     font-size: 14px;
-    color: #222;
     border-radius: 10px;
 }
-.user-ul li:hover{
-    color: #e60000;
+.dropdown-menu-user li a{
+    text-decoration: none;
+    color: #222;
+}
+body.dark-theme .dropdown-menu-user li a{
+    color: #fff;
+}
+.dropdown-menu-user ul li:hover{
     background-color: rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu-user ul li:hover a{
+    color: #e60000;
 }
 .dropdown-user-top {
     position: absolute;
@@ -244,16 +255,26 @@ body.dark-theme .fullscreen-nav {background-color: #111;}
 .dropdown-hidden-user{
     position: absolute;
     opacity: 0;
-    top: -28px;
+    top: -35px;
     right: 0;
     background-color: #e60000;
     transition: 0.5s;
     width: 50px;
-    height: 30px;
+    height: 40px;
 }
 .dropdown-user:hover .dropdown-menu-user {
     opacity: 1 !important;
     visibility: visible !important;
+}
+body.dark-theme .dropdown-menu-user{
+    background-color: #222;
+}
+body.dark-theme .dropdown-menu-user ul li:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .dropdown-user-top .top-p{
+    color: #222;
 }
 .dropdown-menu-are{
     opacity: 0;
@@ -690,12 +711,16 @@ body.dark-theme .grid-item:hover{background-color: rgba(255, 255, 255, 0.2);}
 body.dark-theme .footer{background-color: #222;}
 /*== Dark Mode Code ==*/
 
+/*Auth/Team Start*/
 .side-navigation{
     max-width: 270px;
     min-width: 269px;
     padding: 20px;
     border-right: 4px solid #e60000;
     background-color: #fff;
+}
+body.dark-theme .side-navigation{
+    background-color: #222;
 }
 .user-details{
     padding: 15px 0;
@@ -727,6 +752,9 @@ body.dark-theme .footer{background-color: #222;}
     padding: 0;
     border-bottom: 1px solid #222;
 }
+body.dark-theme .user-profile h5{
+    border-bottom: 1px solid #fff;
+}
 .user-profile-ul{
     margin: 0;
     padding: 0;
@@ -741,13 +769,28 @@ body.dark-theme .footer{background-color: #222;}
     text-decoration: none;
     color: #222;
 }
+body.dark-theme .user-profile-ul li a{
+    color: #fff;
+}
 .user-profile-ul li:hover{
     background-color: rgba(0, 0, 0, 0.1);
+}
+body.dark-theme .user-profile-ul li:hover{
+    background-color: rgba(255, 255, 255, 0.2);
 }
 .contain-wrapper{
     background-color: #fff;
     padding: 15px 25px;
     border-radius: 14px;
+}
+body.dark-theme .contain-wrapper{
+    background-color: #222;
+}
+body.dark-theme .dark-input input{
+    background-color: #222;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 12px;
 }
 .contain-wrapper-head h5{
     margin: 0;
@@ -837,4 +880,6 @@ body.dark-theme .footer{background-color: #222;}
         top: 50px;
     }
 }
+/*Auth/Team Start*/
+
 
