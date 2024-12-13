@@ -907,4 +907,106 @@ body.dark-theme .contain-wrapper-head{
     margin: 0px;
     padding: 0;
 }
+.plan-text{
+    font-size: 17px;
+    padding: 5px;
+}
+.plan-text-a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #e60000;
+}
+.plane-name {
+    padding: 15px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+}
+.plane-name h5{
+    font-size: 18px;
+    color: #e60000;
+    margin: 0;
+}
+.plane-name p{
+    font-size: 14px;
+    margin: 0;
+}
+/*Upgrade Page */
+.upgdrade-page .row{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+.upgdrade-page h1{
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.upgdrade-page h2{
+    font-size: 28px;
+    font-weight: 600;
+}
+.upgdrade-page h1{
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.price-plane{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.price-plane .my-plane{
+    position: relative;
+    padding: 10px;
+    width: 130px;
+    height: 90px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+.my-plane.active{
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #e60000, #ff8800) 1;
+    border-radius: 15px;
+}
+.my-plane h5{
+    font-size: 18px;
+    font-weight: 600;
+}
+.my-plane h4{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+.payment-btns{
+    text-align: left;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.19);
+}
+.payment-btns .i{
+    font-size: 40px;
+    padding: 0 10px;
+}
+.payment-btns span {
+    position: relative;
+    display: inline-block; 
+}
+
+.payment-btns span::before .active {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px; 
+    background-color: rgba(255, 0, 0, 0.9); 
+    bottom: -7px; 
+    left: 0;
+}
+.payment-btns .i:hover{
+    color: #017ff5;
+}
+
 

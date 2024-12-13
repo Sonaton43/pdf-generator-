@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Your Plane</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Font-Awsome css-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <div class="upgdrade-page">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-7 text-center">
+                    <h1>YourLOGO</h1>
+                    <h2>Upgrade to Premium</h2>
+                    <div class="price-plane">
+                        <div class="my-plane active" id="monthly">
+                            <h5>Monthly</h5>
+                            <h4>$ 10</h4>
+                        </div>
+                        <div class="my-plane" id="yearly">
+                            <h5>Yearly</h5>
+                            <h4>$ 100</h4>
+                        </div>
+                    </div>
+                    <div class="payment-btns">
+                        <span><i class="fa-brands fa-cc-mastercard i"></i></span>
+                        <span><i class="fa-brands fa-cc-paypal i"></i></span>
+                    </div>
+                    <a href="#" class="btn btn-danger mt-4">Go Premium</a>
+                </div>
+                <div class="col-md-5 bg-dark h-100">
+                    ofof
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+    <!--Font-Awsome js-->
+    <script src="js/all.min.js"></script>
+    <!--Java Scripts-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Select both plan elements
+            const monthlyPlan = document.getElementById("monthly");
+            const yearlyPlan = document.getElementById("yearly");
+        
+            // Add event listeners to toggle active class
+            monthlyPlan.addEventListener("click", () => {
+                monthlyPlan.classList.add("active");
+                yearlyPlan.classList.remove("active");
+            });
+        
+            yearlyPlan.addEventListener("click", () => {
+                yearlyPlan.classList.add("active");
+                monthlyPlan.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>
