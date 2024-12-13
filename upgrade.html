@@ -11,6 +11,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/about.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="upgdrade-page">
@@ -30,13 +31,43 @@
                         </div>
                     </div>
                     <div class="payment-btns">
-                        <span><i class="fa-brands fa-cc-mastercard i"></i></span>
-                        <span><i class="fa-brands fa-cc-paypal i"></i></span>
+                        <span class="Single btnClick active" target="1"><i class="fa-brands fa-cc-mastercard i"></i></span>
+                        <span class="Single btnClick" target="2"><i class="fa-brands fa-cc-paypal i"></i></span>
                     </div>
-                    <a href="#" class="btn btn-danger mt-4">Go Premium</a>
+                    
+                    <div class="target" id="div1">
+                        <a href="#" class="btn btn-warning mt-4">Card Payment</a>
+                    </div>
+                    <div class="target" id="div2" style="display: none">
+                        <a href="#" class="btn btn-primary mt-4">Paypal Payment</a>
+                    </div>
+                    
                 </div>
-                <div class="col-md-5 bg-dark h-100">
-                    ofof
+                <div class="col-md-5 bg-dark text-left premium-offer h-100 d-flex justify-content-center align-items-center">
+                    <div class="" style="padding-left: 30px;">
+                        <h2>Upgrade to Premium</h2>
+                        <div class="d-flex flex-row">
+                            <div class=""><i class="fa-solid fa-check iii"></i></div>
+                            <div class=""> <p>Unlimited document processing</p></div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class=""><i class="fa-solid fa-check iii"></i></div>
+                            <div class="">  <p>Work on Web, Mobile and Desktop</p></div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class=""><i class="fa-solid fa-check iii"></i></div>
+                            <div class="">  <p>Convert scanned PDF to Word with OCR, sign with digital signatures, convert to PDF/A</p></div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class=""><i class="fa-solid fa-check iii"></i></div>
+                            <div class="">  <p>No Ads</p></div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class=""><p><i class="fa-solid fa-check iii"></i></p></div>
+                            <div class="">  <p>Customer support</p></div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div> 
         </div>
@@ -66,6 +97,31 @@
                 monthlyPlan.classList.remove("active");
             });
         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const btnClicks = document.querySelectorAll(".payment-btns .btnClick");
+        
+            btnClicks.forEach(button => {
+                button.addEventListener("click", () => {
+                    // Remove active class from all buttons
+                    btnClicks.forEach(btn => btn.classList.remove("active"));
+        
+                    // Add active class to the clicked button
+                    button.classList.add("active");
+                });
+            });
+        });
+        
+
     </script>
+    <script type="text/javascript">
+        jQuery(function(){
+        jQuery('.Single').click(function(){
+            jQuery('.target').hide();
+            jQuery('#div'+$(this).attr('target')).show();
+        });
+        });
+    </script>  
+    
 </body>
 </html>
