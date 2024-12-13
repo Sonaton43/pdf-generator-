@@ -786,12 +786,19 @@ body.dark-theme .user-profile-ul li:hover{
 body.dark-theme .contain-wrapper{
     background-color: #222;
 }
-body.dark-theme .dark-input input{
+body.dark-theme .dark-input input,
+body.dark-theme .dark-input textarea,
+body.dark-theme .dark-input select{
     background-color: #222;
     border: 1px solid #fff;
     color: #fff;
     font-size: 12px;
 }   
+body.dark-theme .dark-select input{
+    background-color: #222;
+    border: 1px solid #fff;
+    color: #fff;
+}
 .contain-wrapper-head h5{
     margin: 0;
     padding: 0 0 5px;

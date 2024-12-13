@@ -1,8 +1,10 @@
 /* About Style start*/
+.about-body{
+    background-color: #ececec;
+}
 .about-us{
     width: 80%;
-    background-color: #ffffff;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 .about-content{
     width: 100%;
@@ -44,8 +46,7 @@
 /* Contact Style start*/
 .contact-us{
     width: 80%;
-    background-color: #ffffff;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 .contact-area{
     width: 100%;
@@ -279,6 +280,23 @@
 .blog-demo-right p{
     font-size: 18px;
 }
+.blog-with-col {
+    background-color: #fff;
+    border:2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+body.dark-theme .blog-with-col{
+    background-color: #222;
+    border:2px solid #fff;
+    box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.4);
+}
+body.dark-theme .blog-demo-left img{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+body.dark-theme .blog-demo-right .date-light{
+    color: #fff;
+}
 .blog-grid{
     padding: 50px 10px 0;
     display: grid;
@@ -289,7 +307,8 @@
 }
 .grid-content{
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
 }
 .grid-content img{
     width: 100%;
@@ -303,6 +322,17 @@
     font-size: 14px;
     margin: 0;
     color: rgba(0, 0, 0, 0.4);
+}
+body.dark-theme .grid-content{
+    background-color: #222;
+    border: 1px solid #fff;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
+}
+body.dark-theme .grid-content img{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+body.dark-theme .date-light{
+    color: #fff;
 }
 
 .privacy h2{
