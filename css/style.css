@@ -806,6 +806,9 @@ body.dark-theme .dark-input input{
 .contain-wrapper-head{
     border-bottom: 1px solid #222;
 }
+body.dark-theme .contain-wrapper-head{
+    border-bottom: 1px solid #fff;
+}
 .contain-wrapper-body table tr td,.contain-wrapper-body table tr th{
     padding: 5px 0;
     font-size: 16px;
@@ -881,5 +884,20 @@ body.dark-theme .dark-input input{
     }
 }
 /*Auth/Team Start*/
-
+.team h4{
+    font-size: 30px;
+}
+.team table tr td{
+    font-size: 17px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    margin: 0;
+    
+}
+.team table tr td .i{
+    color: #e60000;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0;
+}
 
