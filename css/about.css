@@ -310,7 +310,7 @@ body.dark-theme .blog-demo-right .date-light{
     background-color: #fff;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
 }
-.grid-content img{
+.grid-content img{          
     width: 100%;
     border-radius: 12px 12px 0 0;
     background-color: rgba(0, 0, 0, 0.1);
