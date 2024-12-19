@@ -53,19 +53,7 @@ $(document).ready(function () {
                         addMoreBtn.hide();
                     }
                 });
-            const rotateBtn = $("<div>")
-                .addClass("rotate-btn")
-                .html('<i class="fas fa-sync-alt"></i>');
-            let rotation = 0;
-            rotateBtn.on("click", function () {
-                rotation = (rotation + 90) % 360;
-                if (file.type.startsWith("image")) {
-                    img.css("transform", `rotate(${rotation}deg)`);
-                } else if (file.type === "application/pdf") {
-                    canvas.css("transform", `rotate(${rotation}deg)`);
-                }
-            });
-            
+    
             if (file.type.startsWith("image")) {
                 const img = $("<img>");
                 const reader = new FileReader();
@@ -93,17 +81,35 @@ $(document).ready(function () {
                         });
                     });
                 });
+            } else if (file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
+                       file.type === "application/msword") {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const arrayBuffer = event.target.result;
+                    mammoth.extractRawText({ arrayBuffer: arrayBuffer })
+                        .then(function (result) {
+                            const docPreview = $("<div>").addClass("doc-preview").html(result.value);
+                            fileItem.append(docPreview);
+                        })
+                        .catch(function (err) {
+                            console.log("Error processing Word file: ", err);
+                            alert("Cannot preview this document.");
+                        });
+                };
+                reader.readAsArrayBuffer(file);
             } else {
-                alert("Unsupported file type: " + file.type);
+                alert("Unsupported file type: " + file.name);
                 continue;
             }
-            fileItem.append(removeBtn).append(rotateBtn);
+            fileItem.append(removeBtn);
             fileList.append(fileItem);
         }
         if (fileList.children().length) {
             addMoreBtn.show();
         }
     }
+    
+    
 
     window.triggerUploadInput = function () {
         $("#upload-input").click();
